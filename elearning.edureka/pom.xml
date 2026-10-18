@@ -68,36 +68,7 @@
                 <suiteXmlFile>testing/BatchExecution.xml</suiteXmlFile>
             </properties>
         </profile>
-        <profile>
-            <id>cart</id>
-            <properties>
-                <suiteXmlFile>testing/Cart.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>checkout</id>
-            <properties>
-                <suiteXmlFile>testing/Checkout.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>login</id>
-            <properties>
-                <suiteXmlFile>testing/Login.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>product</id>
-            <properties>
-                <suiteXmlFile>testing/Product.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>menu</id>
-            <properties>
-                <suiteXmlFile>testing/Menu.xml</suiteXmlFile>
-            </properties>
-        </profile>
+    
         <profile>
             <id>functional</id>
             <properties>
@@ -140,13 +111,6 @@
                 <suiteXmlFile>testing/CrossBrowser.xml</suiteXmlFile>
             </properties>
         </profile>
-        <profile>
-            <id>regression</id>
-            <properties>
-                <suiteXmlFile>testing/Regression.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        
         <profile>
             <id>CB</id>
             <properties>

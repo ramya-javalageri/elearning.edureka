@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Edureka Integration Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Integration Tests(failed)">
-    <groups>
-      <run>
-        <include name="integration"/>
-      </run>
-    </groups>
+<suite thread-count="2" parallel="tests" name="Failed suite [Edureka Parallel Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Firefox Test(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="elearning.edureka.login.LoginTest">
+      <class name="Batch.ArtificialIntelligenceTest">
         <methods>
-          <include name="openLoginPage"/>
-          <include name="launchBrowser"/>
-          <include name="closeBrowser"/>
-          <include name="TC_LOGIN_14"/>
-        </methods>
-      </class> <!-- elearning.edureka.login.LoginTest -->
-      <class name="elearning.edureka.categories.ArtificialIntelligenceTest">
-        <methods>
-          <include name="closeExtraTabs"/>
-          <include name="openAICategoryPage"/>
-          <include name="launchBrowser"/>
-          <include name="closeBrowser"/>
+          <include name="TC_AI_03_VerifySelectedCourseOpensDetails"/>
           <include name="TC_AI_15_VerifyEndToEndAICourseDiscovery"/>
+          <include name="openAICategoryPage"/>
+          <include name="closeExtraTabs"/>
+          <include name="launchBrowser"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- elearning.edureka.categories.ArtificialIntelligenceTest -->
+      </class> <!-- Batch.ArtificialIntelligenceTest -->
     </classes>
-  </test> <!-- Integration Tests(failed) -->
-</suite> <!-- Failed suite [Edureka Integration Suite] -->
+  </test> <!-- Firefox Test(failed) -->
+</suite> <!-- Failed suite [Edureka Parallel Suite] -->
