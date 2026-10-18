@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Launching the browser]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to application successfully]]>
+    </line>
+    <line>
+      <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/masters-program/generative-ai-prompt-engineering-training?qId=6ad429df-0e30-4f67-83ec-0953926d8968&index_name=prod_search_result_courses&objId=3376&objPos=1]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to application successfully]]>
+    </line>
+    <line>
+      <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/online-doctorate-programs/doctor-of-business-administration-dba-birchwood?qId=6ad42465-f7c8-4c12-98b2-094d926d8968&objId=3128&objPos=1]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to application successfully]]>
+    </line>
+    <line>
+      <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/python-scripting?qId=6ad472a8-95fc-496f-a0de-7203926d8968&index_name=prod_search_result_courses&objId=777&objPos=1]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to application successfully]]>
+    </line>
+    <line>
+      <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/online-mba/birchwood-university-usa?qId=6ad46741-8ad8-4dff-8463-7217926d8968&objId=3367&objPos=1]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to application successfully]]>
+    </line>
+    <line>
+      <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/executive-programs?qId=6ad44517-7b78-4569-a891-4393926d8968&objId=1861&objPos=1]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to application successfully]]>
+    </line>
+    <line>
+      <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/sql-essentials-training?qId=6ad45555-68b4-4cd5-a3f3-442b926d8968&index_name=prod_search_result_courses&objId=528&objPos=1]]>
+    </line>
+    <line>
+      <![CDATA[Closing the Browser]]>
+    </line>
+    <line>
+      <![CDATA[Launching the browser]]>
+    </line>
+    <line>
+      <![CDATA[AI category page opened successfully]]>
+    </line>
+    <line>
+      <![CDATA[TC_AI_07: Test execution started]]>
+    </line>
+    <line>
+      <![CDATA[TC_AI_07: Successfully navigated to AI course details]]>
+    </line>
+    <line>
+      <![CDATA[TC_AI_07: Destination URL: https://www.edureka.co/masters-program/generative-ai-prompt-engineering-training?qId=6ad429df-0e30-4f67-83ec-0953926d8968&index_name=prod_search_result_courses&objId=3376&objPos=1]]>
+    </line>
+    <line>
+      <![CDATA[Closing the Browser]]>
+    </line>
+    <line>
+      <![CDATA[Launching the browser]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to application and opened login popup.]]>
+    </line>
+    <line>
+      <![CDATA[TC_LOGIN_14: All Courses page opened successfully. URL: https://www.edureka.co/all-courses]]>
+    </line>
+    <line>
+      <![CDATA[TC_LOGIN_14: Logout successful after All Courses navigation.]]>
+    </line>
+    <line>
+      <![CDATA[Closing the Browser]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2026-10-18T14:49:28 IST" name="Edureka Integration Suite" finished-at="2026-10-18T14:57:10 IST" duration-ms="462134">
+    <groups>
+      <group name="integration">
+        <method signature="AllCoursesTest.TC_AC_020(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" name="TC_AC_020" class="elearning.edureka.allCourses.AllCoursesTest"/>
+        <method signature="ArtificialIntelligenceTest.TC_AI_07_VerifyAllCoursesToAICategoryNavigation()[pri:0, instance:elearning.edureka.categories.ArtificialIntelligenceTest@f5958c9]" name="TC_AI_07_VerifyAllCoursesToAICategoryNavigation" class="elearning.edureka.categories.ArtificialIntelligenceTest"/>
+        <method signature="LoginTest.TC_LOGIN_14()[pri:6, instance:elearning.edureka.login.LoginTest@233795b6]" name="TC_LOGIN_14" class="elearning.edureka.login.LoginTest"/>
+      </group> <!-- integration -->
+    </groups>
+    <test started-at="2026-10-18T14:49:28 IST" name="Integration Tests" finished-at="2026-10-18T14:57:10 IST" duration-ms="462134">
+      <class name="elearning.edureka.allCourses.AllCoursesTest">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:49:28 IST" name="launchBrowser" finished-at="2026-10-18T14:49:33 IST" duration-ms="5100" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Launching the browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="openAllCoursesPage()[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:49:38 IST" name="openAllCoursesPage" finished-at="2026-10-18T14:49:44 IST" duration-ms="5650" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to application successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAllCoursesPage -->
+        <test-method signature="TC_AC_020(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:49:44 IST" name="TC_AC_020" data-provider="courseCategories_ac" finished-at="2026-10-18T14:50:01 IST" duration-ms="17298" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Artificial Intelligence]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/masters-program/generative-ai-prompt-engineering-training?qId=6ad429df-0e30-4f67-83ec-0953926d8968&index_name=prod_search_result_courses&objId=3376&objPos=1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_AC_020 -->
+        <test-method is-config="true" signature="openAllCoursesPage()[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:50:01 IST" name="openAllCoursesPage" finished-at="2026-10-18T14:50:04 IST" duration-ms="2635" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to application successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAllCoursesPage -->
+        <test-method signature="TC_AC_020(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:50:04 IST" name="TC_AC_020" data-provider="courseCategories_ac" finished-at="2026-10-18T14:50:15 IST" duration-ms="10980" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Online Doctorate Programs]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/online-doctorate-programs/doctor-of-business-administration-dba-birchwood?qId=6ad42465-f7c8-4c12-98b2-094d926d8968&objId=3128&objPos=1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_AC_020 -->
+        <test-method is-config="true" signature="openAllCoursesPage()[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:50:15 IST" name="openAllCoursesPage" finished-at="2026-10-18T14:50:17 IST" duration-ms="1943" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to application successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAllCoursesPage -->
+        <test-method signature="TC_AC_020(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:50:17 IST" name="TC_AC_020" data-provider="courseCategories_ac" finished-at="2026-10-18T14:52:39 IST" duration-ms="142532" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Programming & Frameworks]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/python-scripting?qId=6ad472a8-95fc-496f-a0de-7203926d8968&index_name=prod_search_result_courses&objId=777&objPos=1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_AC_020 -->
+        <test-method is-config="true" signature="openAllCoursesPage()[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:52:39 IST" name="openAllCoursesPage" finished-at="2026-10-18T14:52:42 IST" duration-ms="2582" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to application successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAllCoursesPage -->
+        <test-method signature="TC_AC_020(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:52:42 IST" name="TC_AC_020" data-provider="courseCategories_ac" finished-at="2026-10-18T14:52:53 IST" duration-ms="10881" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Online MBA]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/online-mba/birchwood-university-usa?qId=6ad46741-8ad8-4dff-8463-7217926d8968&objId=3367&objPos=1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_AC_020 -->
+        <test-method is-config="true" signature="openAllCoursesPage()[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:52:53 IST" name="openAllCoursesPage" finished-at="2026-10-18T14:52:55 IST" duration-ms="2348" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to application successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAllCoursesPage -->
+        <test-method signature="TC_AC_020(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:52:55 IST" name="TC_AC_020" data-provider="courseCategories_ac" finished-at="2026-10-18T14:53:10 IST" duration-ms="14809" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Project Management and Methodologies]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/executive-programs?qId=6ad44517-7b78-4569-a891-4393926d8968&objId=1861&objPos=1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_AC_020 -->
+        <test-method is-config="true" signature="openAllCoursesPage()[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:53:10 IST" name="openAllCoursesPage" finished-at="2026-10-18T14:53:12 IST" duration-ms="1638" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to application successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAllCoursesPage -->
+        <test-method signature="TC_AC_020(java.lang.String)[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:53:12 IST" name="TC_AC_020" data-provider="courseCategories_ac" finished-at="2026-10-18T14:53:21 IST" duration-ms="9750" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Databases]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TC_AC_020: Course details navigation successful. URL: https://www.edureka.co/sql-essentials-training?qId=6ad45555-68b4-4cd5-a3f3-442b926d8968&index_name=prod_search_result_courses&objId=528&objPos=1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_AC_020 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:elearning.edureka.allCourses.AllCoursesTest@31190526]" started-at="2026-10-18T14:53:21 IST" name="closeBrowser" finished-at="2026-10-18T14:53:25 IST" duration-ms="3314" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Closing the Browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- elearning.edureka.allCourses.AllCoursesTest -->
+      <class name="elearning.edureka.categories.ArtificialIntelligenceTest">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:elearning.edureka.categories.ArtificialIntelligenceTest@f5958c9]" started-at="2026-10-18T14:53:25 IST" name="launchBrowser" finished-at="2026-10-18T14:53:28 IST" duration-ms="2714" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Launching the browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="openAICategoryPage()[pri:0, instance:elearning.edureka.categories.ArtificialIntelligenceTest@f5958c9]" started-at="2026-10-18T14:53:28 IST" name="openAICategoryPage" finished-at="2026-10-18T14:53:31 IST" duration-ms="3673" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[AI category page opened successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAICategoryPage -->
+        <test-method signature="TC_AI_07_VerifyAllCoursesToAICategoryNavigation()[pri:0, instance:elearning.edureka.categories.ArtificialIntelligenceTest@f5958c9]" started-at="2026-10-18T14:53:31 IST" name="TC_AI_07_VerifyAllCoursesToAICategoryNavigation" finished-at="2026-10-18T14:53:56 IST" duration-ms="25061" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[TC_AI_07: Test execution started]]>
+            </line>
+            <line>
+              <![CDATA[TC_AI_07: Successfully navigated to AI course details]]>
+            </line>
+            <line>
+              <![CDATA[TC_AI_07: Destination URL: https://www.edureka.co/masters-program/generative-ai-prompt-engineering-training?qId=6ad429df-0e30-4f67-83ec-0953926d8968&index_name=prod_search_result_courses&objId=3376&objPos=1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_AI_07_VerifyAllCoursesToAICategoryNavigation -->
+        <test-method is-config="true" signature="closeExtraTabs()[pri:0, instance:elearning.edureka.categories.ArtificialIntelligenceTest@f5958c9]" started-at="2026-10-18T14:53:56 IST" name="closeExtraTabs" finished-at="2026-10-18T14:53:56 IST" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeExtraTabs -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:elearning.edureka.categories.ArtificialIntelligenceTest@f5958c9]" started-at="2026-10-18T14:53:56 IST" name="closeBrowser" finished-at="2026-10-18T14:53:59 IST" duration-ms="2811" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Closing the Browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- elearning.edureka.categories.ArtificialIntelligenceTest -->
+      <class name="elearning.edureka.login.LoginTest">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String)[pri:0, instance:elearning.edureka.login.LoginTest@233795b6]" started-at="2026-10-18T14:53:59 IST" name="launchBrowser" finished-at="2026-10-18T14:54:01 IST" duration-ms="2308" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Launching the browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="openLoginPage()[pri:0, instance:elearning.edureka.login.LoginTest@233795b6]" started-at="2026-10-18T14:54:01 IST" name="openLoginPage" finished-at="2026-10-18T14:54:25 IST" duration-ms="23343" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to application and opened login popup.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method signature="TC_LOGIN_14()[pri:6, instance:elearning.edureka.login.LoginTest@233795b6]" started-at="2026-10-18T14:54:25 IST" name="TC_LOGIN_14" finished-at="2026-10-18T14:57:07 IST" duration-ms="161714" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[TC_LOGIN_14: All Courses page opened successfully. URL: https://www.edureka.co/all-courses]]>
+            </line>
+            <line>
+              <![CDATA[TC_LOGIN_14: Logout successful after All Courses navigation.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_LOGIN_14 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:elearning.edureka.login.LoginTest@233795b6]" started-at="2026-10-18T14:57:07 IST" name="closeBrowser" finished-at="2026-10-18T14:57:10 IST" duration-ms="3375" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Closing the Browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- elearning.edureka.login.LoginTest -->
+    </test> <!-- Integration Tests -->
+  </suite> <!-- Edureka Integration Suite -->
+</testng-results>

@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>TestNG:  Smoke Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Smoke Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Oct 18 14:28:19 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>43 seconds (43148 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>smoke </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='elearning.edureka.login.LoginTest.TC_LOGIN_01()'><b>TC_LOGIN_01</b><br>Test class: elearning.edureka.login.LoginTest<br/>
+<a href="#Output-1332439166" onClick='toggleBox("Output-1332439166", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1332439166" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1332439166">
+TC_LOGIN_01: Login form displayed successfully.<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>elearning.edureka.login.LoginTest@62ddbd7e</td></tr>
+<tr>
+<td title='elearning.edureka.allCourses.AllCoursesTest.TC_AC_001()'><b>TC_AC_001</b><br>Test class: elearning.edureka.allCourses.AllCoursesTest<br/>
+<a href="#Output-688581408" onClick='toggleBox("Output-688581408", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-688581408" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-688581408">
+TC_AC_001: All Courses page loaded successfully.<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>elearning.edureka.allCourses.AllCoursesTest@6f03482</td></tr>
+<tr>
+<td title='elearning.edureka.categories.ArtificialIntelligenceTest.TC_AI_01_VerifyAICategoryPageOpens()'><b>TC_AI_01_VerifyAICategoryPageOpens</b><br>Test class: elearning.edureka.categories.ArtificialIntelligenceTest<br/>
+<a href="#Output-1164344728" onClick='toggleBox("Output-1164344728", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1164344728" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1164344728">
+TC_AI_01: Test execution started<br/>
+TC_AI_01: Test passed. Heading: Artificial Intelligence<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>elearning.edureka.categories.ArtificialIntelligenceTest@7eac9008</td></tr>
+<tr>
+<td title='elearning.edureka.dynamicSearch.DynamicSearchTest.dynamicSearchTest_TC_DS_001()'><b>dynamicSearchTest_TC_DS_001</b><br>Test class: elearning.edureka.dynamicSearch.DynamicSearchTest<br/>
+<a href="#Output-1911600942" onClick='toggleBox("Output-1911600942", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1911600942" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1911600942">
+TC_DS_001: Dynamic Search page opened successfully<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>elearning.edureka.dynamicSearch.DynamicSearchTest@4116aac9</td></tr>
+</table><p>
+</body>
+</html>

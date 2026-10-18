@@ -1,0 +1,59 @@
+
+package elearning.edureka.genericUtility;
+
+import java.io.IOException;
+import org.openqa.selenium.WebDriver;
+
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+import elearning.edureka.objectRepo.AllCoursesPage;
+import elearning.edureka.objectRepo.ArtificialIntelligencePage;
+import elearning.edureka.objectRepo.DynamicSearchPage;
+import elearning.edureka.objectRepo.HomePage;
+public class BaseTest
+{
+    public WebDriver driver = null;
+    public WebDriverUtility wbu = new WebDriverUtility();
+//    public FileUtility fu;
+    public ExcelUtility excelUtility = new ExcelUtility();
+    public FileUtility fileUtility;
+    
+
+    public HomePage homePage;
+    public DynamicSearchPage dynamicSearchPage;
+    public AllCoursesPage allCoursesPage;
+    public ArtificialIntelligencePage aiPage;
+
+    @Parameters("browser")
+    @BeforeClass(groups = {"smoke", "functional", "integration","negative", "regression", "system"})
+    public void launchBrowser(@Optional("chrome") String browser) throws IOException
+    {
+        Reporter.log("Launching the browser", true);
+
+        fileUtility = new FileUtility();
+        driver = wbu.launchBrowser(browser);
+        wbu.setDriver(driver);
+
+        homePage = new HomePage(driver);
+        dynamicSearchPage = new DynamicSearchPage(driver);
+        allCoursesPage = new AllCoursesPage(driver);
+        aiPage = new ArtificialIntelligencePage(driver);
+    }
+
+    
+    @AfterClass(groups = {"smoke", "functional", "integration","negative", "regression", "system"})
+    public void closeBrowser()
+    {
+    	Reporter.log("Closing the Browser", true);
+
+        if (driver != null)
+        {
+            wbu.quitBrowser(driver);
+            driver = null;
+        }
+    }
+}

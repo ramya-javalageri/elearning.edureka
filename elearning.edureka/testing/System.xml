@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Edureka System Suite" parallel="false">
+
+    <test name="System Tests">
+        <groups>
+            <run>
+                <include name="system"/>
+            </run>
+        </groups>
+
+		<classes>
+			<class name="elearning.edureka.allCourses.AllCoursesTest"></class>
+			<class name="elearning.edureka.categories.ArtificialIntelligenceTest"></class>
+			<class name="elearning.edureka.dynamicSearch.DynamicSearchTest"></class>
+			<class name="elearning.edureka.login.LoginTest"></class>
+		</classes>
+        
+    </test>
+
+</suite>
