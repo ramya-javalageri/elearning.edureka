@@ -8,15 +8,17 @@
         <parameter name="browser" value="chrome"/>
 
         <classes>
+			<class name="Batch.ArtificialIntelligenceTest"></class>
 			<class name="Batch.AllCoursesTest"></class>
         </classes>
     </test>
 
     <!-- Firefox Execution -->
-    <test name="Firefox Test">
-        <parameter name="browser" value="firefox"/>
+    <test name="Edge Test">
+        <parameter name="browser" value="edge"/>
 
         <classes>
+			<class name="Batch.ArtificialIntelligenceTest"></class>
 			<class name="Batch.AllCoursesTest"></class>
         </classes>
     </test>

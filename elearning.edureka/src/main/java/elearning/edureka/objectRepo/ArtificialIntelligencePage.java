@@ -1,32 +1,25 @@
+
 package elearning.edureka.objectRepo;
 
 import java.time.Duration;
 import java.util.List;
-
+import java.util.stream.Collectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ArtificialIntelligencePage {
-
     private WebDriver driver;
     private WebDriverWait wait;
     private final String aiUrl = "https://www.edureka.co/artificial-intelligence-certification-courses";
-
-    @FindBy(xpath = "//h1[contains(normalize-space(.),'Artificial Intelligence')] | //h2[contains(normalize-space(.),'Artificial Intelligence')]")
-    private WebElement aiHeading;
-
-    @FindBy(css = "div[class*='courselist_card']")
-    private List<WebElement> courseCards;
-
-    @FindBy(xpath = "//a[contains(normalize-space(.),'View Program')]")
-    private List<WebElement> viewProgramLinks;
+    private final By aiHeading = By.xpath("//h1[contains(normalize-space(.),'Artificial Intelligence')] | //h2[contains(normalize-space(.),'Artificial Intelligence')]");
+    private final By courseCards = By.cssSelector("div[class*='courselist_card']");
+    private final By viewProgramLinks = By.xpath("//a[contains(normalize-space(.),'View Program')]");
 
     public ArtificialIntelligencePage(WebDriver driver) {
         this.driver = driver;
@@ -36,45 +29,39 @@ public class ArtificialIntelligencePage {
 
     public void openAIPage() {
         driver.get(aiUrl);
-        wait.until(ExpectedConditions.visibilityOf(aiHeading));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(aiHeading));
     }
 
     public boolean isAIHeadingDisplayed() {
         try {
-            return wait.until(ExpectedConditions.visibilityOf(aiHeading)).isDisplayed();
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(aiHeading)).isDisplayed();
         } catch (Exception e) {
             return false;
         }
     }
 
     public String getAIHeading() {
-        return aiHeading.getText().trim();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(aiHeading)).getText().trim();
     }
 
     public void clickFirstViewProgram() {
-        By viewProgramLocator = By.xpath("//a[contains(normalize-space(.),'View Program')]");
-        wait.until(ExpectedConditions.presenceOfElementLocated(viewProgramLocator));
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 400);");
-
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(viewProgramLocator)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(viewProgramLinks)).click();
         } catch (StaleElementReferenceException e) {
-            wait.until(ExpectedConditions.elementToBeClickable(viewProgramLocator)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(viewProgramLinks)).click();
         }
     }
 
     public String getFirstCourseTitle() {
         By firstCourseTitle = By.xpath("(//a[contains(@data-category,'Artificial Intelligence')])[1]");
-
-        return wait.until(driver -> {
+        return wait.until(d -> {
             try {
-                WebElement element = driver.findElement(firstCourseTitle);
+                WebElement element = d.findElement(firstCourseTitle);
                 String value = element.getAttribute("data-title");
-
                 if (value == null || value.trim().isEmpty()) {
                     value = element.getText().trim();
                 }
-
                 return value != null && !value.trim().isEmpty() ? value.trim() : null;
             } catch (StaleElementReferenceException e) {
                 return null;
@@ -83,12 +70,20 @@ public class ArtificialIntelligencePage {
     }
 
     public List<WebElement> getVisibleCourseCards() {
-        return courseCards.stream().filter(WebElement::isDisplayed).toList();
+        return wait.until(d -> {
+            try {
+                List<WebElement> cards = d.findElements(courseCards);
+                List<WebElement> visibleCards = cards.stream().filter(WebElement::isDisplayed).collect(Collectors.toList());
+                return visibleCards.isEmpty() ? null : visibleCards;
+            } catch (StaleElementReferenceException e) {
+                return null;
+            }
+        });
     }
 
     public boolean isCourseDetailPageLoaded() {
         try {
-            wait.until(driver -> !driver.getCurrentUrl().equalsIgnoreCase(aiUrl));
+            wait.until(d -> !d.getCurrentUrl().equalsIgnoreCase(aiUrl));
             return !driver.getCurrentUrl().equalsIgnoreCase(aiUrl);
         } catch (Exception e) {
             return false;

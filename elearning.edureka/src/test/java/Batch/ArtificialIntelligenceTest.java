@@ -55,14 +55,16 @@ public class ArtificialIntelligenceTest extends BaseTest {
 
 
     //TC_AI_012
-    @Test(groups = {"system"})
-    public void TC_AI_12_VerifyAICategoryReloadsCorrectly() {
-        Reporter.log("TC_AI_12: Test execution started", true);
-        wbu.refresh(driver);
-        Assert.assertTrue(aiPage.isAIHeadingDisplayed(), "AI category heading is missing after refresh.");
-        Assert.assertFalse(aiPage.getVisibleCourseCards().isEmpty(), "Course cards are missing after refresh.");
-        Reporter.log("TC_AI_12: AI category page reloaded successfully", true);
-    }
+
+	@Test(groups = {"system"})
+	public void TC_AI_12_VerifyAICategoryReloadsCorrectly() {
+	    Reporter.log("TC_AI_12: Test execution started", true);
+	    wbu.refresh(driver);
+	    Assert.assertTrue(aiPage.isAIHeadingDisplayed(), "AI category heading is missing after refresh.");
+	    Assert.assertFalse(aiPage.getVisibleCourseCards().isEmpty(), "Course cards are missing after refresh.");
+	    Reporter.log("TC_AI_12: AI category page reloaded successfully", true);
+	}
+
     
     //TC_AI_015
     @Test(groups = {"system", "integration"})
