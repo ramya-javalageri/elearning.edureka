@@ -38,23 +38,21 @@ public class ExcelUtility {
 	}
 	
 
-	public Object[][] getDataFromExcelSheet(String sheetName)
-	        throws EncryptedDocumentException, IOException {
-	
+	public Object[][] getDataFromExcelSheet(String sheetName) throws EncryptedDocumentException, IOException 
+	{
 	    int rows = totalNumOfRows(sheetName);
 	    int cols = totalNumOfCol(sheetName);
 	
-	    // Row 0 contains headers, so skip it
 	    Object[][] data = new Object[rows - 1][cols];
 	
-	    for (int i = 1; i < rows; i++) {
-	        for (int j = 0; j < cols; j++) {
-	            data[i - 1][j] = getDataFromExcelFile(
-	                    sheetName, i, j);
+	    for (int i = 1; i < rows; i++) 
+	    {
+	        for (int j = 0; j < cols; j++) 
+	        {
+	            data[i - 1][j] = getDataFromExcelFile(sheetName, i, j);
 	        }
 	    }
 	
 	    return data;
 	}
-
 }

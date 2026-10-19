@@ -20,22 +20,22 @@ public class LoginTest extends BaseTest {
     }
 
     // TC_LOGIN_02_VerifyLoginWithValidCredentials
-    @Test(groups = {"functional"},priority = 5)
-    public void TC_LOGIN_02() throws EncryptedDocumentException, IOException, InterruptedException {
+    @Test(groups = {"functional"},priority = 1)
+    public void TC_LOGIN_02() throws EncryptedDocumentException, IOException, InterruptedException 
+    {
         String email = fileUtility.getDataFromPropertyFile("username");
         String password = fileUtility.getDataFromPropertyFile("password");
         homePage.loginToApplication(email, password);
         Reporter.log("TC_LOGIN_02: Login successful.", true);
         wbu.clickElement(homePage.getAccountDropdown());
-        wbu.clickElement(homePage.getLogoutButton());
-        Thread.sleep(2000);
-        wbu.refresh(driver);
+        homePage.clickLogout();
         Reporter.log("TC_LOGIN_02: Logout successful.", true);
     }
 
     // TC_LOGIN_07_VerifyPasswordCharactersAreMasked
-    @Test(groups = {"functional"},priority = 1)
-    public void TC_LOGIN_07() throws EncryptedDocumentException, IOException {
+    @Test(groups = {"functional"},priority = 5)
+    public void TC_LOGIN_07() throws EncryptedDocumentException, IOException 
+    {
     	homePage.enterPassword(fileUtility.getDataFromPropertyFile("password"));
         String passwordType = homePage.getPasswordFieldType();
         String expectedPasswordType = excelUtility.getDataFromExcelFile("Login", 3, 1);
@@ -45,9 +45,11 @@ public class LoginTest extends BaseTest {
 
     // TC_LOGIN_09_VerifyForgotPasswordNavigation
     @Test(groups = {"functional"},priority = 2)
-    public void TC_LOGIN_09() {
+    public void TC_LOGIN_09() 
+    {
         homePage.clickForgotPassword();
         Assert.assertFalse(driver.getPageSource().trim().isEmpty(), "Page content is empty after clicking Forgot Password.");
         Reporter.log("TC_LOGIN_09: Forgot Password navigation verified. URL: " + wbu.getCurrentUrl(), true);
     }
+
 }

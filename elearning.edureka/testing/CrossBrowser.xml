@@ -6,28 +6,25 @@
     <!-- Chrome Execution -->
     <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
-
-        <classes>
-			<class name="Batch.LoginTest"></class>
-        </classes>
+        <packages>
+        	<package name="Batch"></package>
+        </packages>
     </test>
 
     <!-- Edge Execution -->
     <test name="Edge Test">
         <parameter name="browser" value="edge"/>
-
-        <classes>
-			<class name="Batch.LoginTest"></class>
-        </classes>
+		<packages>
+        	<package name="Batch"></package>
+        </packages>
     </test>
 
     <!-- Firefox Execution -->
     <test name="Firefox Test">
         <parameter name="browser" value="firefox"/>
-
-        <classes>
-			<class name="Batch.LoginTest"></class>
-        </classes>
+		<packages>
+        	<package name="Batch"></package>
+        </packages>
     </test>
 
 </suite>

@@ -2,6 +2,7 @@
 package elearning.edureka.genericUtility;
 
 import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import org.testng.Reporter;
@@ -14,30 +15,30 @@ import elearning.edureka.objectRepo.AllCoursesPage;
 import elearning.edureka.objectRepo.ArtificialIntelligencePage;
 import elearning.edureka.objectRepo.DynamicSearchPage;
 import elearning.edureka.objectRepo.HomePage;
+
 public class BaseTest
 {
     public WebDriver driver = null;
-    public WebDriverUtility wbu = new WebDriverUtility();
-//    public FileUtility fu;
-    public ExcelUtility excelUtility = new ExcelUtility();
+    public WebDriverUtility wbu;
+    public ExcelUtility excelUtility;
     public FileUtility fileUtility;
-    
-
     public HomePage homePage;
     public DynamicSearchPage dynamicSearchPage;
     public AllCoursesPage allCoursesPage;
     public ArtificialIntelligencePage aiPage;
 
     @Parameters("browser")
-    @BeforeClass(groups = {"smoke", "functional", "integration","negative", "regression", "system"})
+    @BeforeClass(groups = {"smoke", "functional", "integration","negative","system"})
     public void launchBrowser(@Optional("chrome") String browser) throws IOException
     {
-        Reporter.log("Launching the browser", true);
-
-        fileUtility = new FileUtility();
+        Reporter.log("Launching the browser: "+browser, true);
+        wbu = new WebDriverUtility();
+        
         driver = wbu.launchBrowser(browser);
         wbu.setDriver(driver);
 
+        excelUtility = new ExcelUtility();
+        fileUtility = new FileUtility();
         homePage = new HomePage(driver);
         dynamicSearchPage = new DynamicSearchPage(driver);
         allCoursesPage = new AllCoursesPage(driver);
@@ -45,7 +46,7 @@ public class BaseTest
     }
 
     
-    @AfterClass(groups = {"smoke", "functional", "integration","negative", "regression", "system"})
+    @AfterClass(groups = {"smoke", "functional", "integration","negative","system"})
     public void closeBrowser()
     {
     	Reporter.log("Closing the Browser", true);

@@ -26,8 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverUtility 
 {
-    // WebDriver Reference
-    private WebDriver driver;
+    WebDriver driver;
 
     // ==================== Browser Methods ====================
 
@@ -115,18 +114,18 @@ public class WebDriverUtility
 
     public void genericWait(WebDriver driver) 
     {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 
     public void conditionalWait_ElementTobePresent(WebDriver driver, WebElement ele) 
     {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(ele));
     }
 
     public void conditionalWait_ActionTobePerformedOnElement(WebDriver driver, WebElement ele) 
     {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(ele));
     }
 
@@ -188,21 +187,30 @@ public class WebDriverUtility
         throw new IllegalStateException("No child window found.");
     }
     
-    public void switchToNewWindowIfOpened(String originalWindow) {
-        try {
-            new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .until(d -> d.getWindowHandles().size() > 1);
 
-            for (String window : driver.getWindowHandles()) {
-                if (!window.equals(originalWindow)) {
-                    driver.switchTo().window(window);
-                    return;
-                }
+public void switchToNewWindowIfOpened(String originalWindow)
+{
+    try
+    {
+        new WebDriverWait(driver, Duration.ofSeconds(15))
+            .until(d -> d.getWindowHandles().stream()
+                .anyMatch(handle -> !handle.equals(originalWindow)));
+
+        for (String window : driver.getWindowHandles())
+        {
+            if (!window.equals(originalWindow))
+            {
+                driver.switchTo().window(window);
+                return;
             }
-        } catch (TimeoutException e) {
-            // No new tab opened; continue in the current tab.
         }
     }
+    catch (TimeoutException e)
+    {
+        throw new IllegalStateException(
+            "No new browser window was opened within 15 seconds.", e);
+    }
+}
 
     // ==================== Screenshot Methods ====================
 

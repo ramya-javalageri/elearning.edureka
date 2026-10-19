@@ -14,16 +14,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import elearning.edureka.genericUtility.FileUtility;
 import elearning.edureka.genericUtility.WebDriverUtility;
 
-public class HomePage {
-
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class HomePage 
+{
+    WebDriver driver;
+    WebDriverWait wait;
 
     WebDriverUtility wbu = new WebDriverUtility();
     FileUtility fu = new FileUtility();
 
     // Home Page elements
-
     @FindBy(xpath = "//div[contains(@class,'navbar_search_click_bx') and .//span[normalize-space()='Search courses']]")
     private WebElement searchCourses;
 
@@ -43,7 +42,6 @@ public class HomePage {
     private WebElement query;
 
     // Login form elements
-
     @FindBy(id = "loginFormEmail")
     private WebElement emailField;
 
@@ -57,8 +55,8 @@ public class HomePage {
     private WebElement forgotPasswordLink;
 
     // Constructor
-
-    public HomePage(WebDriver driver) {
+    public HomePage(WebDriver driver) 
+    {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -67,107 +65,116 @@ public class HomePage {
     }
 
     // Login operations
-
-    public void clickHomeLogin() {
+    public void clickHomeLogin() 
+    {
         wbu.clickElement(loginButton);
     }
 
-    public void enterEmail(String email) {
-        wait.until(ExpectedConditions.visibilityOf(emailField));
+    public void enterEmail(String email) 
+    {
+        wbu.conditionalWait_ElementTobePresent(driver, emailField);
         wbu.enterData(emailField, email);
     }
 
-    public void enterPassword(String password) {
-        wait.until(ExpectedConditions.visibilityOf(passwordField));
+    public void enterPassword(String password) 
+    {
+    	wbu.conditionalWait_ElementTobePresent(driver, passwordField);
         wbu.enterData(passwordField, password);
     }
 
-    public void clickLogin() {
+    public void clickLogin() 
+    {
         wbu.clickElement(submitLoginButton);
     }
 
-    public void loginToApplication(String email, String password) {
+    public void loginToApplication(String email, String password) 
+    {
         enterEmail(email);
         enterPassword(password);
         clickLogin();
     }
 
-    public void login() throws IOException {
+    public void login() throws IOException 
+    {
         clickHomeLogin();
         enterEmail(fu.getDataFromPropertyFile("username"));
         enterPassword(fu.getDataFromPropertyFile("password"));
         clickLogin();
     }
 
-    public boolean isLoginFormDisplayed() {
-        return wait.until(ExpectedConditions.visibilityOf(emailField)).isDisplayed()
-                && passwordField.isDisplayed()
-                && submitLoginButton.isDisplayed();
+    public boolean isLoginFormDisplayed() 
+    {
+        return wait.until(ExpectedConditions.visibilityOf(emailField)).isDisplayed() && passwordField.isDisplayed() && submitLoginButton.isDisplayed();
     }
 
-    public String getPasswordFieldType() {
-        wait.until(ExpectedConditions.visibilityOf(passwordField));
+    public String getPasswordFieldType() 
+    {
+    	wbu.conditionalWait_ElementTobePresent(driver, passwordField);
         return passwordField.getAttribute("type");
     }
 
-    public void clickForgotPassword() {
-        wait.until(ExpectedConditions.elementToBeClickable(forgotPasswordLink)).click();
+    public void clickForgotPassword() 
+    {
+        wbu.clickElement(forgotPasswordLink);
     }
 
     // All Courses operations
-
-    public void clickAllCourses() {
+    public void clickAllCourses() 
+    {
 
         By loader = By.cssSelector("div[class*='loader_loader_div']");
-        By allCoursesLink = By.xpath("//a[normalize-space()='All Courses']");
-
-        // Wait until the loading overlay disappears
         wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
-
-        // Wait until All Courses is clickable
-        wait.until(ExpectedConditions.elementToBeClickable(allCoursesLink));
-
-        // Click the freshly located element
-        driver.findElement(allCoursesLink).click();
-
+//        wbu.conditionalWait_ElementTobePresent(driver, loader);
+        wbu.clickElement(allCourses);
     }
-    
-    
-    public WebElement getallCourses() {
+       
+    public WebElement getallCourses() 
+    {
         return allCourses;
     }
 
     // Search operations
-
-    public WebElement getSearchCourses() {
+    public WebElement getSearchCourses() 
+    {
         return searchCourses;
     }
 
     // Account and logout operations
-
-    public WebElement getAccountDropdown() {
+    public WebElement getAccountDropdown() 
+    {
         return accountDropdown;
     }
 
-    public void clickAccountDropdown() {
+    public void clickAccountDropdown() 
+    {
         wbu.clickElement(accountDropdown);
     }
+    
+    public void clickLogout() throws InterruptedException
+    {
+    	wbu.clickElement(logout);
+        Thread.sleep(2000);
+//        wbu.refresh(driver);
+    }
 
-    public WebElement getLogoutButton() {
+    public WebElement getLogoutButton() 
+    {
         return logout;
     }
 
-    public boolean isLogoutDisplayed() {
+    public boolean isLogoutDisplayed() 
+    {
         return logout.isDisplayed();
     }
 
     // Other operations
-
-    public WebElement getLoginButton() {
+    public WebElement getLoginButton() 
+    {
         return loginButton;
     }
 
-    public WebElement getQuery() {
+    public WebElement getQuery() 
+    {
         return query;
     }
 }
