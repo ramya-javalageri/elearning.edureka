@@ -36,9 +36,10 @@ public class AllCoursesTest extends BaseTest
     }
 
     // TC_AC_006 - particular courses displayed
-    @Test(groups = {"functional"}, dataProvider = "courseCategories_ac", dataProviderClass = DataProviders.class)
-    public void TC_AC_006(String categoryName) 
+    @Test(groups = {"functional"})
+    public void TC_AC_006() throws EncryptedDocumentException, IOException 
     {
+    	String categoryName = excelUtility.getDataFromExcelFile("AI", 1, 1);
         allCoursesPage.clickCategory(categoryName);
         List<String> courseTitles = allCoursesPage.getCourseTitles();
         Assert.assertFalse(courseTitles.isEmpty(), "No courses displayed for category: " + categoryName);
