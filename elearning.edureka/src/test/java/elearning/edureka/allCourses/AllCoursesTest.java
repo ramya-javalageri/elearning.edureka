@@ -70,10 +70,10 @@ public class AllCoursesTest extends BaseTest
     }
 
     // TC_AC_020 - navigated to course
-    @Test(groups = {"integration"}, dataProvider = "courseCategories_ac", dataProviderClass = DataProviders.class)
-    public void TC_AC_020(String categoryName) 
+    @Test(groups = {"integration"})
+    public void TC_AC_020() throws EncryptedDocumentException, IOException 
     {
-        allCoursesPage.clickCategory(categoryName);
+        allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("CorseCatageories_AC", 1, 0));
         List<String> courseTitles = allCoursesPage.getCourseTitles();
         Assert.assertFalse(courseTitles.isEmpty(), "No course is available to open.");     
         String oldUrl = driver.getCurrentUrl();
