@@ -73,7 +73,7 @@ public class AllCoursesTest extends BaseTest
     @Test(groups = {"integration"})
     public void TC_AC_020() throws EncryptedDocumentException, IOException 
     {
-        allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("CorseCatageories_AC", 1, 0));
+        allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AI", 1, 1));
         List<String> courseTitles = allCoursesPage.getCourseTitles();
         Assert.assertFalse(courseTitles.isEmpty(), "No course is available to open.");     
         String oldUrl = driver.getCurrentUrl();
