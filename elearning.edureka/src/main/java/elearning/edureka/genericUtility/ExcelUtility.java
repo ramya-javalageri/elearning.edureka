@@ -34,7 +34,7 @@ public class ExcelUtility {
 		FileInputStream fis = new FileInputStream("./src/test/resources/TestData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
 		
-		return wb.getSheet(sheetName).getRow(row).getCell(cell).toString();
+		return wb.getSheet(sheetName).getRow(row).getCell(cell).getStringCellValue();
 	}
 	
 
