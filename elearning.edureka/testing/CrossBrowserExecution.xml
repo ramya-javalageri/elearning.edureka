@@ -3,6 +3,15 @@
 
 <suite name="Edureka Cross Browser Suite">
 
+
+	<!-- Firefox Execution -->
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"/>
+
+        <classes>
+			<class name="Batch.AllCoursesTest"></class>
+        </classes>
+    </test>
     <!-- Chrome Execution -->
     <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
@@ -12,13 +21,6 @@
         </classes>
     </test>
 
-    <!-- Firefox Execution -->
-    <test name="Firefox Test">
-        <parameter name="browser" value="firefox"/>
-
-        <classes>
-			<class name="Batch.AllCoursesTest"></class>
-        </classes>
-    </test>
+    
 
 </suite>
