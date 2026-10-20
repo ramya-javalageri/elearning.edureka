@@ -11,9 +11,10 @@
         </groups>
 
 		<classes>
+			<class name="elearning.edureka.login.LoginTest"></class>
 			<class name="elearning.edureka.allCourses.AllCoursesTest"></class>
 			<class name="elearning.edureka.categories.ArtificialIntelligenceTest"></class>
-			<class name="elearning.edureka.login.LoginTest"></class>
+			
 		</classes>
         
     </test>
