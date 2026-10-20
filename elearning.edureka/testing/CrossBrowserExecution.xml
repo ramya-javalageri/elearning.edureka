@@ -9,7 +9,7 @@
         <parameter name="browser" value="firefox"/>
 
         <classes>
-			<class name="Batch.AllCoursesTest"></class>
+			<class name="Batch.LoginTest"></class>
         </classes>
     </test>
     <!-- Chrome Execution -->
