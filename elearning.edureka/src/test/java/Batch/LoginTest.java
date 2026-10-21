@@ -11,7 +11,7 @@ import elearning.edureka.genericUtility.BaseTest;
 
 public class LoginTest extends BaseTest {
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod(groups = {"smoke", "functional", "integration","negative","system"})
     public void openLoginPage() throws EncryptedDocumentException, IOException {
         driver.get(fileUtility.getDataFromPropertyFile("url"));
         homePage.clickHomeLogin();
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
     }
 
     // TC_LOGIN_07_VerifyPasswordCharactersAreMasked
-    @Test(groups = {"functional"},priority = 5)
+    @Test(groups = {"functional"},priority = 3)
     public void TC_LOGIN_07() throws EncryptedDocumentException, IOException 
     {
     	homePage.enterPassword(fileUtility.getDataFromPropertyFile("password"));

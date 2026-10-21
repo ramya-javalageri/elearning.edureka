@@ -37,7 +37,7 @@ public class AllCoursesPage
         wbu = new WebDriverUtility();
         wbu.setDriver(driver);
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     public boolean isPageHeadingDisplayed() 

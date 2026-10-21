@@ -7,14 +7,16 @@
     <test name="All Courses Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Batch.AllCoursesTest"/>
+            <class name="elearning.edureka.categories.ArtificialIntelligenceTest"/>
+            <class name="elearning.edureka.allCourses.AllCoursesTest"/>
         </classes>
     </test>
 
     <test name="Artificial Intelligence Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Batch.ArtificialIntelligenceTest"/>
+            <class name="elearning.edureka.categories.ArtificialIntelligenceTest"/>
+            <class name="elearning.edureka.allCourses.AllCoursesTest"/>
         </classes>
     </test>
 

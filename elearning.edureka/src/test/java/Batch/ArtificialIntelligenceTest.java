@@ -18,7 +18,7 @@ import elearning.edureka.genericUtility.BaseTest;
 public class ArtificialIntelligenceTest extends BaseTest 
 {
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod(groups = {"smoke", "functional", "integration","negative","system"})
     public void openAICategoryPage() throws EncryptedDocumentException, IOException 
     {
         driver.get(excelUtility.getDataFromExcelFile("AI", 0, 1));

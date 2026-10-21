@@ -20,7 +20,7 @@ import elearning.edureka.genericUtility.WebDriverUtility;
 public class ArtificialIntelligencePage 
 {
     private WebDriver driver;
-    private WebDriverUtility wbu = new WebDriverUtility();
+    private WebDriverUtility wbu;
     private WebDriverWait wait;
     private final String aiUrl = "https://www.edureka.co/artificial-intelligence-certification-courses";
 
@@ -36,8 +36,9 @@ public class ArtificialIntelligencePage
     public ArtificialIntelligencePage(WebDriver driver) 
     {
         this.driver = driver;
+        wbu = new WebDriverUtility();
         wbu.setDriver(driver);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         PageFactory.initElements(driver, this);
     }
 

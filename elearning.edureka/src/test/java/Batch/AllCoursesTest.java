@@ -2,6 +2,7 @@
 package Batch;
 
 import java.io.IOException;
+
 import java.time.Duration;
 import java.util.List;
 import org.apache.poi.EncryptedDocumentException;
@@ -12,7 +13,6 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import elearning.edureka.genericUtility.BaseTest;
-import elearning.edureka.genericUtility.DataProviders;
 
 public class AllCoursesTest extends BaseTest 
 {

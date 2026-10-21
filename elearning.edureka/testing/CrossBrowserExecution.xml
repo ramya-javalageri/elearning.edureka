@@ -9,7 +9,7 @@
         <parameter name="browser" value="firefox"/>
 
         <classes>
-			<class name="Batch.LoginTest"></class>
+			<class name="elearning.edureka.login.LoginTest"></class>
         </classes>
     </test>
     <!-- Chrome Execution -->
@@ -17,10 +17,8 @@
         <parameter name="browser" value="chrome"/>
 
         <classes>
-			<class name="Batch.AllCoursesTest"></class>
+			<class name="elearning.edureka.login.LoginTest"></class>
         </classes>
     </test>
-
-    
 
 </suite>

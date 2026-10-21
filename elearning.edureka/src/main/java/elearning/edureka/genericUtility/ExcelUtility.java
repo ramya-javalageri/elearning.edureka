@@ -36,23 +36,4 @@ public class ExcelUtility {
 		
 		return wb.getSheet(sheetName).getRow(row).getCell(cell).toString();
 	}
-	
-
-	public Object[][] getDataFromExcelSheet(String sheetName) throws EncryptedDocumentException, IOException 
-	{
-	    int rows = totalNumOfRows(sheetName);
-	    int cols = totalNumOfCol(sheetName);
-	
-	    Object[][] data = new Object[rows - 1][cols];
-	
-	    for (int i = 1; i < rows; i++) 
-	    {
-	        for (int j = 0; j < cols; j++) 
-	        {
-	            data[i - 1][j] = getDataFromExcelFile(sheetName, i, j);
-	        }
-	    }
-	
-	    return data;
-	}
 }

@@ -6,7 +6,7 @@
     <test name="Execute All Test Classes">
 
 		<packages>
-		<package name="Batch"></package>
+		<package name="elearning.edureka.*"></package>
 		</packages>
 
     </test>

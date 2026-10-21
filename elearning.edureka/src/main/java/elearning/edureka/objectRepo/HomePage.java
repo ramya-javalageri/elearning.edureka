@@ -19,8 +19,8 @@ public class HomePage
     WebDriver driver;
     WebDriverWait wait;
 
-    WebDriverUtility wbu = new WebDriverUtility();
-    FileUtility fu = new FileUtility();
+    WebDriverUtility wbu;
+    FileUtility fu;
 
     // Home Page elements
     @FindBy(xpath = "//div[contains(@class,'navbar_search_click_bx') and .//span[normalize-space()='Search courses']]")
@@ -58,8 +58,9 @@ public class HomePage
     public HomePage(WebDriver driver) 
     {
         this.driver = driver;
+        fu = new FileUtility();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
+        wbu = new WebDriverUtility();
         wbu.setDriver(driver);
         PageFactory.initElements(driver, this);
     }
@@ -124,7 +125,6 @@ public class HomePage
 
         By loader = By.cssSelector("div[class*='loader_loader_div']");
         wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
-//        wbu.conditionalWait_ElementTobePresent(driver, loader);
         wbu.clickElement(allCourses);
     }
        
@@ -154,7 +154,6 @@ public class HomePage
     {
     	wbu.clickElement(logout);
         Thread.sleep(2000);
-//        wbu.refresh(driver);
     }
 
     public WebElement getLogoutButton() 

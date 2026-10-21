@@ -2,6 +2,7 @@
 package elearning.edureka.allCourses;
 
 import java.io.IOException;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -14,7 +15,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import elearning.edureka.genericUtility.BaseTest;
-import elearning.edureka.genericUtility.DataProviders;
 
 public class AllCoursesTest extends BaseTest 
 {
@@ -39,7 +39,7 @@ public class AllCoursesTest extends BaseTest
     @Test(groups = {"functional"})
     public void TC_AC_006() throws EncryptedDocumentException, IOException 
     {
-    	String categoryName = excelUtility.getDataFromExcelFile("AI", 1, 1);
+    	String categoryName = excelUtility.getDataFromExcelFile("AllCourses", 1, 0);
         allCoursesPage.clickCategory(categoryName);
         List<String> courseTitles = allCoursesPage.getCourseTitles();
         Assert.assertFalse(courseTitles.isEmpty(), "No courses displayed for category: " + categoryName);
@@ -47,9 +47,11 @@ public class AllCoursesTest extends BaseTest
     }
 
     // TC_AC_014 - Functional
-    @Test(groups = {"functional"}, dataProvider = "categoryPairs", dataProviderClass = DataProviders.class)
-    public void TC_AC_014(String firstCategory, String secondCategory) 
+    @Test(groups = {"functional"})
+    public void TC_AC_014() throws EncryptedDocumentException, IOException 
     {
+    	String firstCategory = excelUtility.getDataFromExcelFile("AllCourses", 2, 0);
+    	String secondCategory = excelUtility.getDataFromExcelFile("AllCourses", 3, 0);
         allCoursesPage.clickCategory(firstCategory);
         Assert.assertTrue(allCoursesPage.isCategorySelected(firstCategory), firstCategory + " is not highlighted.");
         allCoursesPage.clickCategory(secondCategory);
@@ -74,10 +76,10 @@ public class AllCoursesTest extends BaseTest
     @Test(groups = {"integration"})
     public void TC_AC_020() throws EncryptedDocumentException, IOException 
     {
-        allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AI", 1, 1));
+        allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AllCourses", 1, 0));
         List<String> courseTitles = allCoursesPage.getCourseTitles();
         Assert.assertFalse(courseTitles.isEmpty(), "No course is available to open.");     
-        String oldUrl = driver.getCurrentUrl();
+        String oldUrl = wbu.getCurrentUrl();
         allCoursesPage.clickViewCourseDetails(courseTitles.get(0));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(oldUrl)));
@@ -91,7 +93,7 @@ public class AllCoursesTest extends BaseTest
     @Test(groups = {"negative"})
     public void TC_AC_026() throws IOException 
     {
-    	allCoursesPage.clickCategory("Robotic Process Automation");
+    	allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AllCourses", 4, 0));
         Assert.assertTrue(allCoursesPage.isPageNotFoundDisplayed(),"Expected Page Not Found message was not displayed.");
         wbu.takeScreenshot(driver, "TC_AC_026");
         Reporter.log("TC_AC_026: Invalid category URL handling verified.",true);

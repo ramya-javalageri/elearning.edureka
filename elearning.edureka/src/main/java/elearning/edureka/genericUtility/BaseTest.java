@@ -3,6 +3,7 @@ package elearning.edureka.genericUtility;
 
 import java.io.IOException;
 
+
 import org.openqa.selenium.WebDriver;
 
 import org.testng.Reporter;
@@ -13,7 +14,6 @@ import org.testng.annotations.Parameters;
 
 import elearning.edureka.objectRepo.AllCoursesPage;
 import elearning.edureka.objectRepo.ArtificialIntelligencePage;
-import elearning.edureka.objectRepo.DynamicSearchPage;
 import elearning.edureka.objectRepo.HomePage;
 
 public class BaseTest
@@ -23,7 +23,6 @@ public class BaseTest
     public ExcelUtility excelUtility;
     public FileUtility fileUtility;
     public HomePage homePage;
-    public DynamicSearchPage dynamicSearchPage;
     public AllCoursesPage allCoursesPage;
     public ArtificialIntelligencePage aiPage;
 
@@ -40,7 +39,6 @@ public class BaseTest
         excelUtility = new ExcelUtility();
         fileUtility = new FileUtility();
         homePage = new HomePage(driver);
-        dynamicSearchPage = new DynamicSearchPage(driver);
         allCoursesPage = new AllCoursesPage(driver);
         aiPage = new ArtificialIntelligencePage(driver);
     }
@@ -51,10 +49,6 @@ public class BaseTest
     {
     	Reporter.log("Closing the Browser", true);
 
-        if (driver != null)
-        {
-            wbu.quitBrowser(driver);
-            driver = null;
-        }
+        wbu.quitBrowser(driver);
     }
 }

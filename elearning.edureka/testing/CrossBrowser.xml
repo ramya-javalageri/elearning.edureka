@@ -3,28 +3,29 @@
 
 <suite name="Edureka Cross Browser Suite">
 
-    <!-- Chrome Execution -->
+	<!-- Chrome Execution -->
     <test name="Chrome Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-        	<class name="Batch.LoginTest"></class>
+        	<class name="elearning.edureka.login.LoginTest"></class>
         </classes>
     </test>
-
+ 
     <!-- Edge Execution -->
     <test name="Edge Test">
         <parameter name="browser" value="edge"/>
 		<classes>
-        	<class name="Batch.LoginTest"></class>
+        	<class name="elearning.edureka.allCourses.AllCoursesTest"></class>
         </classes>
     </test>
-
+    
     <!-- Firefox Execution -->
     <test name="Firefox Test">
         <parameter name="browser" value="firefox"/>
 		<classes>
-        	<class name="Batch.LoginTest"></class>
+        	<class name="elearning.edureka.categories.ArtificialIntelligenceTest"></class>
         </classes>
     </test>
+    
 
 </suite>
