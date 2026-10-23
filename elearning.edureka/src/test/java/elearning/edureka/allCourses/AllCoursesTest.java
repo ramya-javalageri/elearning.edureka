@@ -16,86 +16,79 @@ import org.testng.annotations.Test;
 
 import elearning.edureka.genericUtility.BaseTest;
 
-public class AllCoursesTest extends BaseTest 
-{
+public class AllCoursesTest extends BaseTest {
 
-    @BeforeMethod(groups = {"smoke", "functional", "integration","negative","system"})
-    public void openAllCoursesPage() throws EncryptedDocumentException, IOException 
-    {
-        driver.get(excelUtility.getDataFromExcelFile("Login", 4, 1));
-        Reporter.log("Navigated to application successfully",true);
-    }
-    
-    // TC_AC_001 - all course page is loaded or not
-    @Test(groups = {"smoke"})
-    public void TC_AC_001() 
-    {
-        Assert.assertTrue(allCoursesPage.isPageHeadingDisplayed(),"All Courses page heading is not displayed.");
-        Assert.assertTrue(allCoursesPage.isIntroductoryTextDisplayed(),"Introductory text is not displayed.");
-        Reporter.log("TC_AC_001: All Courses page loaded successfully.",true);
-    }
+	@BeforeMethod(groups = { "smoke", "functional", "integration", "negative", "system" })
+	public void openAllCoursesPage() throws EncryptedDocumentException, IOException {
+		driver.get(excelUtility.getDataFromExcelFile("Login", 4, 1));
+		Reporter.log("Navigated to application successfully", true);
+	}
 
-    // TC_AC_006 - particular courses displayed
-    @Test(groups = {"functional"})
-    public void TC_AC_006() throws EncryptedDocumentException, IOException 
-    {
-    	String categoryName = excelUtility.getDataFromExcelFile("AllCourses", 1, 0);
-        allCoursesPage.clickCategory(categoryName);
-        List<String> courseTitles = allCoursesPage.getCourseTitles();
-        Assert.assertFalse(courseTitles.isEmpty(), "No courses displayed for category: " + categoryName);
-        Reporter.log("TC_AC_006: Courses displayed for " + categoryName + ": " + courseTitles, true);
-    }
+	// TC_AC_001 - all course page is loaded or not
+	@Test(groups = { "smoke" })
+	public void TC_AC_001() {
+		Assert.assertTrue(allCoursesPage.isPageHeadingDisplayed(), "All Courses page heading is not displayed.");
+		Assert.assertTrue(allCoursesPage.isIntroductoryTextDisplayed(), "Introductory text is not displayed.");
+		Reporter.log("TC_AC_001: All Courses page loaded successfully.", true);
+	}
 
-    // TC_AC_014 - Functional
-    @Test(groups = {"functional"})
-    public void TC_AC_014() throws EncryptedDocumentException, IOException 
-    {
-    	String firstCategory = excelUtility.getDataFromExcelFile("AllCourses", 2, 0);
-    	String secondCategory = excelUtility.getDataFromExcelFile("AllCourses", 3, 0);
-        allCoursesPage.clickCategory(firstCategory);
-        Assert.assertTrue(allCoursesPage.isCategorySelected(firstCategory), firstCategory + " is not highlighted.");
-        allCoursesPage.clickCategory(secondCategory);
-        Assert.assertTrue(allCoursesPage.isCategorySelected(secondCategory), secondCategory + " is not highlighted.");
-        Reporter.log("TC_AC_014: Category highlighting verified for " + firstCategory + " and " + secondCategory, true);
-    }
+	// TC_AC_006 - particular courses displayed
+	@Test(groups = { "functional" })
+	public void TC_AC_006() throws EncryptedDocumentException, IOException {
+		String categoryName = excelUtility.getDataFromExcelFile("AllCourses", 1, 0);
+		allCoursesPage.clickCategory(categoryName);
+		List<String> courseTitles = allCoursesPage.getCourseTitles();
+		Assert.assertFalse(courseTitles.isEmpty(), "No courses displayed for category: " + categoryName);
+		Reporter.log("TC_AC_006: Courses displayed for " + categoryName + ": " + courseTitles, true);
+	}
 
-    // TC_AC_018 - courses text
-    @Test(groups = {"system"})
-    public void TC_AC_018() 
-    {
-        List<String> cardTexts = allCoursesPage.getCourseCardTexts();
-        Assert.assertFalse(cardTexts.isEmpty(), "No course cards were found.");
-        for (String cardText : cardTexts) 
-        {
-            Assert.assertFalse(cardText.trim().isEmpty(), "A course card contains no readable text.");
-        }
-        Reporter.log("TC_AC_018: Course card text is present and readable.", true);
-    }
+	// TC_AC_014 - Functional
+	@Test(groups = { "functional" })
+	public void TC_AC_014() throws EncryptedDocumentException, IOException {
+		String firstCategory = excelUtility.getDataFromExcelFile("AllCourses", 2, 0);
+		String secondCategory = excelUtility.getDataFromExcelFile("AllCourses", 3, 0);
+		allCoursesPage.clickCategory(firstCategory);
+		Assert.assertTrue(allCoursesPage.isCategorySelected(firstCategory), firstCategory + " is not highlighted.");
+		allCoursesPage.clickCategory(secondCategory);
+		Assert.assertTrue(allCoursesPage.isCategorySelected(secondCategory), secondCategory + " is not highlighted.");
+		Reporter.log("TC_AC_014: Category highlighting verified for " + firstCategory + " and " + secondCategory, true);
+	}
 
-    // TC_AC_020 - navigated to course
-    @Test(groups = {"integration"})
-    public void TC_AC_020() throws EncryptedDocumentException, IOException 
-    {
-        allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AllCourses", 1, 0));
-        List<String> courseTitles = allCoursesPage.getCourseTitles();
-        Assert.assertFalse(courseTitles.isEmpty(), "No course is available to open.");     
-        String oldUrl = wbu.getCurrentUrl();
-        allCoursesPage.clickViewCourseDetails(courseTitles.get(0));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(oldUrl)));
-        String newUrl = wbu.getCurrentUrl();
-        Assert.assertNotEquals(newUrl, oldUrl, "View Course Details did not navigate to another URL. " + courseTitles.get(0));
-        Reporter.log("TC_AC_020: Course details navigation successful. URL: " + newUrl, true);
-     
-    }
+	// TC_AC_018 - courses text
+	@Test(groups = { "system" })
+	public void TC_AC_018() {
+		List<String> cardTexts = allCoursesPage.getCourseCardTexts();
+		Assert.assertFalse(cardTexts.isEmpty(), "No course cards were found.");
+		for (String cardText : cardTexts) {
+			Assert.assertFalse(cardText.trim().isEmpty(), "A course card contains no readable text.");
+		}
+		Reporter.log("TC_AC_018: Course card text is present and readable.", true);
+	}
 
-    // TC_AC_026 - Negative page not found
-    @Test(groups = {"negative"})
-    public void TC_AC_026() throws IOException 
-    {
-    	allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AllCourses", 4, 0));
-        Assert.assertTrue(allCoursesPage.isPageNotFoundDisplayed(),"Expected Page Not Found message was not displayed.");
-        wbu.takeScreenshot(driver, "TC_AC_026");
-        Reporter.log("TC_AC_026: Invalid category URL handling verified.",true);
-    }
+	// TC_AC_020 - navigated to course
+	@Test(groups = { "integration" })
+	public void TC_AC_020() throws EncryptedDocumentException, IOException {
+		allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AllCourses", 1, 0));
+		List<String> courseTitles = allCoursesPage.getCourseTitles();
+		Assert.assertFalse(courseTitles.isEmpty(), "No course is available to open.");
+		String oldUrl = wbu.getCurrentUrl();
+		allCoursesPage.clickViewCourseDetails(courseTitles.get(0));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.not(ExpectedConditions.urlToBe(oldUrl)));
+		String newUrl = wbu.getCurrentUrl();
+		Assert.assertNotEquals(newUrl, oldUrl,
+				"View Course Details did not navigate to another URL. " + courseTitles.get(0));
+		Reporter.log("TC_AC_020: Course details navigation successful. URL: " + newUrl, true);
+
+	}
+
+	// TC_AC_026 - Negative page not found
+	@Test(groups = { "negative" })
+	public void TC_AC_026() throws IOException {
+		allCoursesPage.clickCategory(excelUtility.getDataFromExcelFile("AllCourses", 4, 0));
+		Assert.assertTrue(allCoursesPage.isPageNotFoundDisplayed(),
+				"Expected Page Not Found message was not displayed.");
+		wbu.takeScreenshot(driver, "TC_AC_026");
+		Reporter.log("TC_AC_026: Invalid category URL handling verified.", true);
+	}
 }
